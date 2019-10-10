@@ -34,7 +34,9 @@ const Calculator = () => {
             {subjects.map(subject => (
                 <div key={subject.id}>
                     <label >{ subject.label }</label>
-                    <select onChange={e => setMarks({...marks, [e.target.id]: e.target.value })} id={subject.label}>
+                    <select 
+                    className="custom-select"
+                    onChange={e => setMarks({...marks, [e.target.id]: e.target.value })} id={subject.label}>
                         {points.map(point => (
                             <option value={ point.point } key={ point.point }>{ point.grade }</option>
                         ))}
@@ -43,7 +45,9 @@ const Calculator = () => {
                 </div>
                 )
             )}
-            <button onClick={handleSubmit}>Submit</button>
+            <div className="mx-auto w-100 center">
+                <button className="btn mt-2 w-75 btn-info" onClick={handleSubmit}>Submit</button>
+            </div>
         </div>
      );
 }
